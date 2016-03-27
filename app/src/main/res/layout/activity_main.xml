@@ -21,7 +21,7 @@
         app:indicatorLimit="4"
         app:indicatorWidth="40dp"
         app:visibleMenuCount="5"
-        app:indicatorColor="@color/colorPrimary"
+        app:indicatorColor="@android:color/white"
         >
 
         <TextView
