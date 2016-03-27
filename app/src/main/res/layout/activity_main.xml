@@ -19,7 +19,8 @@
         app:indicatorHeight="20dp"
         app:indicatorLimit="4"
         app:indicatorWidth="40dp"
-        app:visibleMenuCount="5">
+        app:visibleMenuCount="5"
+        >
 
         <TextView
             android:layout_width="wrap_content"
