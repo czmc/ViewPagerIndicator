@@ -58,6 +58,7 @@ public class ViewPagerIndicator extends LinearLayout implements ViewPager.OnPage
         TypedArray ta = getResources().obtainAttributes(attrs, R.styleable.ViewPagerIndicator);
         mIndicatorColor = ta.getColor(R.styleable.ViewPagerIndicator_indicatorColor, Color.parseColor("#ffffff"));
         mHighLightTextColor = ta.getColor(R.styleable.ViewPagerIndicator_highLightTextColor, Color.parseColor("#ffffff"));
+        mDefaultTextColor = ta.getColor(R.styleable.ViewPagerIndicator_defaultTextColor, Color.parseColor("#ffffff"));
         mIndicatorHeight = ta.getDimension(R.styleable.ViewPagerIndicator_indicatorHeight, 30);
         mIndicatorWidth = ta.getDimension(R.styleable.ViewPagerIndicator_indicatorWidth, 30);
         mVisibleMenuCount = ta.getInt(R.styleable.ViewPagerIndicator_visibleMenuCount, 3);
@@ -106,6 +107,7 @@ public class ViewPagerIndicator extends LinearLayout implements ViewPager.OnPage
 
     @Override
     protected void onAttachedToWindow() {
+        if(mViewPager!=null)
         mViewPager.setCurrentItem(mFirstPosition);
         super.onAttachedToWindow();
     }
@@ -115,7 +117,6 @@ public class ViewPagerIndicator extends LinearLayout implements ViewPager.OnPage
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         if (getChildCount() > 0) {
             View child = getChildAt(0);
-            mDefaultTextColor = ((TextView) child).getTextColors().getDefaultColor();
             mChildHeight = child.getMeasuredHeight();
             mChildWidth = mScreenWidth / mVisibleMenuCount;
             for (int i = 0; i < getChildCount(); i++) {

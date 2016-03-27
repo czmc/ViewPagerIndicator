@@ -16,10 +16,12 @@
         android:padding="10dp"
         app:firstPosition="2"
         app:highLightTextColor="#d95858"
+        app:defaultTextColor="#ffffff"
         app:indicatorHeight="20dp"
         app:indicatorLimit="4"
         app:indicatorWidth="40dp"
         app:visibleMenuCount="5"
+        app:indicatorColor="@color/colorPrimary"
         >
 
         <TextView
